@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -21,12 +22,12 @@ class LoginPage extends StatelessWidget {
               BoxShadow(
                   blurRadius: 24,
                   spreadRadius: 16,
-                  color: Colors.black.withOpacity(0.2))
+                  color: Colors.white.withOpacity(0.2))
             ]),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16.0),
               child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 40.0, sigmaY: 40.0),
+                filter: ImageFilter.blur(sigmaX: 24.0, sigmaY: 24.0),
                 child: Container(
                   height: 500,
                   width: 300,
@@ -44,68 +45,68 @@ class LoginPage extends StatelessWidget {
                           children: [
                             Text(
                               'welcome ',
-                              style: TextStyle(
-                                  color:  Color(0xFF422bc5),
+                              style: GoogleFonts.poppins(
+                                  color: Color(0xFF422bc5),
                                   fontSize: 24,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w600),
+                              // style: TextStyle(
+                              //     color: Color(0xFF422bc5),
+                              //     fontSize: 24,
+                              //     fontWeight: FontWeight.w500),
                             ),
                             Text(
-                              'back',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.w500,
-                              ),
+                              'Back',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 24, fontWeight: FontWeight.w600),
                             )
                           ],
                         ),
                         SizedBox(height: 10),
-                        Text('Welcome! please login to continue',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF59585f)
+                        Text(
+                          'Welcome! Please login to continue.',
+                          style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w500,
+                              color: Colors.grey.shade600),
                         ),
-                        ),
-                        
                         SizedBox(
                           height: 15,
                         ),
-                        Text('Email',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold
+                        Text(
+                          'Email',
+                          style:
+                              GoogleFonts.poppins(fontWeight: FontWeight.w600),
                         ),
-                        ),
-                        SizedBox(height: 6),
+                        SizedBox(height: 5),
                         LoginFormField(
                           hint: 'Enter your email address',
                         ),
                         SizedBox(height: 10),
-                        Text('password',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold
+                        Text(
+                          'password',
+                          style:
+                              GoogleFonts.poppins(fontWeight: FontWeight.w600),
                         ),
-                        ),
-                        SizedBox(height: 6),
-                        LoginFormField(hint: 'Enter your password'),
+                        SizedBox(height: 5),
+                        LoginFormField(hint: 'Enter your Password'),
                         SizedBox(height: 30),
-
                         Row(
-                          // mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             SizedBox(
                               height: 12,
                               width: 20,
                               child: Checkbox(
-                                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                                value: false, onChanged: null),
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  value: false,
+                                  onChanged: null),
                             ),
-                            
                             SizedBox(
                               width: 10,
                             ),
-                            Text('remember me',
-                            style: TextStyle(
-                              color: Color(0xFF59585f)
-                            ),
+                            Text(
+                              'remember me',
+                              style:
+                                  GoogleFonts.poppins(color: Color(0xFF59585f)),
                             )
                           ],
                         ),
@@ -119,6 +120,16 @@ class LoginPage extends StatelessWidget {
                               height: 50,
                               width: 125,
                               decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.indigo.shade700
+                                          .withOpacity(0.5),
+                                      spreadRadius: 1,
+                                      blurRadius: 5,
+                                      offset: Offset(
+                                          2, 3), // changes position of shadow
+                                    ),
+                                  ],
                                   gradient: LinearGradient(
                                     begin: Alignment.topRight,
                                     end: Alignment.bottomLeft,
@@ -129,39 +140,43 @@ class LoginPage extends StatelessWidget {
                                   ),
                                   borderRadius: BorderRadius.circular(5)),
                               child: Center(
-                                  child: Text(
-                                'Log in',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold),
-                              )),
+                                child: Text(
+                                  'Log in',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                              ),
                             ),
                             SizedBox(width: 5),
                             Container(
                               height: 50,
                               width: 130,
                               decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  border:
+                                      Border.all(color: Colors.indigo.shade700),
+                                  color: Colors.white.withOpacity(0.5),
                                   borderRadius: BorderRadius.circular(5)),
                               child: Center(
-                                  child: Text(
-                                'sign up',
-                                style: TextStyle(
-                                    color: Color(0xFF1D1CCF),
+                                child: Text(
+                                  'sign up',
+                                  style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w600,
                                     fontSize: 15,
-                                    fontWeight: FontWeight.bold),
-                              ),
+                                    color: Color(0xFF1D1CCF),
+                                  ),
+                                ),
                               ),
                             )
                           ],
                         ),
-                        SizedBox(height: 40),
-
-                        Text('forgot pasword?',
-                        style: TextStyle(
-                          color: Color(0xFF4a3fe4),
-                        ),
+                        SizedBox(height: 25),
+                        Text(
+                          'forgot pasword?',
+                          style: GoogleFonts.poppins(
+                              color: Color(0xFF4a3fe4),
+                              fontWeight: FontWeight.w500),
                         )
                       ],
                     ),
@@ -188,13 +203,18 @@ class LoginFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
+        filled: true,
+        fillColor: Colors.white.withOpacity(0.5),
         hintText: hint,
+        hintStyle: GoogleFonts.poppins(
+          fontSize: 12
+        ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 3,
             color: Colors.black26,
           ),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(5),
         ),
       ),
     );
